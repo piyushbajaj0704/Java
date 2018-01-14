@@ -1,6 +1,6 @@
 class Solution {
     public int maximumSwap(int num) {
-        int[] digits = Integer.toString(num).toCharArray();
+        char[] digits = Integer.toString(num).toCharArray();
         int[] buckets = new int[10];
         
         for(int i=0;i<digits.length;i++) {
@@ -8,7 +8,7 @@ class Solution {
         }
         
         for(int i=0;i<digits.length;i++) {
-            for(k=9;k>digits[i]-'0';k--) {
+            for(int k=9;k>digits[i]-'0';k--) {
                 if(buckets[k] > i) {
                     char temp = digits[i];
                     digits[i] = digits[buckets[k]];
