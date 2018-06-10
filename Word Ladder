@@ -7,6 +7,8 @@ class Solution {
         int strlen = beginWord.length();
         int length=1;
         HashSet<String> visited = new HashSet<String>();
+        
+        if(!wordList.contains(endWord)) return 0;
         while(!beginSet.isEmpty() && !endSet.isEmpty()) {
             if(beginSet.size() > endSet.size()) {
                 HashSet<String> set = beginSet;
