@@ -9,6 +9,8 @@ class Solution {
         HashSet<String> visited = new HashSet<String>();
         
         if(!wordList.contains(endWord)) return 0;
+        
+        Set<String> dict = new HashSet<>(wordList);
         while(!beginSet.isEmpty() && !endSet.isEmpty()) {
             if(beginSet.size() > endSet.size()) {
                 HashSet<String> set = beginSet;
@@ -26,7 +28,7 @@ class Solution {
                         if(endSet.contains(value)) {
                             return length+1;
                         }
-                        if(!visited.contains(value) && wordList.contains(value)) {
+                        if(!visited.contains(value) && dict.contains(value)) {
                             visited.add(value);
                             temp.add(value);
                         }
