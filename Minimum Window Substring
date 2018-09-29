@@ -5,7 +5,7 @@ public String minWindow(String s, String t) {
  
     //character counter for t
     HashMap<Character, Integer> target = new HashMap<Character, Integer>();
-    for(int i=0; i<t.length(); i++){
+    for(int i=0; i<t.length(); i++){ //
         char c = t.charAt(i);    
         if(target.containsKey(c)){
             target.put(c,target.get(c)+1);
