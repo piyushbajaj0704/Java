@@ -1,0 +1,13 @@
+public boolean hasPathSum(TreeNode root, int sum) {
+       return pathSum(root, sum);
+   }
+   
+   public boolean pathSum(TreeNode node, int target)
+   {
+       if(node == null) return false;
+       
+       if(node.left == null && node.right == null)
+           return target == node.val;
+       
+       return pathSum(node.left, target - node.val) || pathSum(node.right, target - node.val);
+   }
