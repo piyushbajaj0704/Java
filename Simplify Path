@@ -1,0 +1,13 @@
+class Solution {
+    public String simplifyPath(String path) {
+        Stack<String> st = new Stack<>();
+        Set<String> set = new HashSet<>(Arrays.asList("..",".",""));
+        for(String s : path.split("/")) {
+            if(s.equals("..") && !st.isEmpty()) st.pop();
+            else if(!set.contains(s)) st.push(s);
+        }
+        String p = "";
+        for(String s : st) p += "/" + s;
+        return st.isEmpty() ? "/": p;
+    }
+}
