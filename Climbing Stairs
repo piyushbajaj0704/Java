@@ -1,0 +1,15 @@
+class Solution {
+    public int climbStairs(int n) {
+        if(n<=0 || n==1 || n==2)
+            return n;
+        int count1 = 1;
+        int count2 = 2;
+        int countAll = 0;
+        for(int i=3; i<=n; i++){
+            countAll = count1 + count2;
+            count1 = count2;
+            count2 = countAll;
+        }
+        return countAll;
+    }
+ }
